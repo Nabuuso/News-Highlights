@@ -8,4 +8,16 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    return render_template('index.html')
+
+    message = 'Hello World'
+    return render_template('index.html',message = message)
+
+
+@app.route('/news/<int:news_id>')
+def news(news_id):
+
+    '''
+    View news page function that returns the movie details page and its data
+    '''
+    news = 'News-Highlights'
+    return render_template('news.html',id = news_id)
