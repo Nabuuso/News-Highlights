@@ -22,4 +22,3 @@ def news(news_id):
     news = 'News-Highlights'
     return render_template('news.html',id = news_id)
 
-
