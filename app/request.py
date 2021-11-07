@@ -1,6 +1,7 @@
 from app import app
-import urllib.request,json
-from models import news
+import urllib.request, json
+from .models import news
+from urllib.request import Request, urlopen
 
 News = news.News
 
@@ -15,6 +16,7 @@ def get_news():
     '''
     # get_movies_url = base_url.format(category,api_key)              #new
     get_news_url= 'https://newsapi.org/v2/news?apiKey=0de28d09fb894c7bbc3d053f21fdbc4f'
+    
     # print(get_news_url)
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
