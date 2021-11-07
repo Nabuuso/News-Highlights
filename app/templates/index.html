@@ -1,3 +1,4 @@
+{% import "bootstrap/wtf.html" as wtf %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,12 +11,15 @@
     </head>
     <body>
         <!-- Popular news section  -->
-        <h3> Popular News/h3>
-         <ul>
-            {% for popular_news in popular %}
-                <li>{{ popular_news.title}}</li>
-            {% endfor %}
-        </ul>
+        <h3> News Search</h3>
+        {% block content %}
+    <div class="container">
+        <div class="col-md-4">
+            {{ wtf.quick_form(news_search_form) }}
+        </div>
+    </div>
+
+{% endblock %}
     </body>
 </html>
 
